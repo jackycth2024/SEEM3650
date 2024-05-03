@@ -18,7 +18,7 @@ print("\nTransportation Data:")
 print(transportation_data.head())
 
 # Merge population and transportation data
-merged_data = pd.merge(population_data, transportation_data, on='date')
+merged_data = pd.merge(population_data, transportation_data, on='Year')
 
 # Check for missing values and drop rows with missing values
 print("\nMissing Values:")
