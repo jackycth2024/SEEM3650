@@ -28,21 +28,17 @@ X_train, X_test, y_train_frequency_train, y_train_frequency_test = train_test_sp
 
 # Define regression models
 ridge_model_ridership = Ridge(alpha=1.0, random_state=42)
-lasso_model_ridership = Lasso(alpha=1.0, random_state=42)
 ridge_model_train_frequency = Ridge(alpha=1.0, random_state=42)
-lasso_model_train_frequency = Lasso(alpha=1.0, random_state=42)
+
 
 # Fit regression models
 ridge_model_ridership.fit(X_train, y_ridership_train)
-lasso_model_ridership.fit(X_train, y_ridership_train)
 ridge_model_train_frequency.fit(X_train, y_train_frequency_train)
-lasso_model_train_frequency.fit(X_train, y_train_frequency_train)
 
 # Make predictions using regression models
 y_ridership_pred_ridge = ridge_model_ridership.predict(X_test)
-y_ridership_pred_lasso = lasso_model_ridership.predict(X_test)
 y_train_frequency_pred_ridge = ridge_model_train_frequency.predict(X_test)
-y_train_frequency_pred_lasso = lasso_model_train_frequency.predict(X_test)
+
 
 # Evaluate model performance
 print("\nModel Performance for MTR Ridership (Ridge Regression):")
